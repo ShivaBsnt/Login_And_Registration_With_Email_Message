@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+<h1>Are you sure you want to  delete  user {{ user.username}}?</h1>
+<form method="post" action="{% url 'delete' user.id %}">
+    {% csrf_token %}
+    <div class="form-group ">
+        <input type="submit" value="Delete" class="btn btn-info btn-block">
+        <a href="{% url 'index'%}"><input type="submit" value="Cancel" class="btn btn-info btn-block"></a>
+    </div>
+</form>
+</body>
+</html>
